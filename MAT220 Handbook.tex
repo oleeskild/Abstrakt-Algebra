@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[norsk]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eso-pic}
+\usepackage{pst-plot}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\title{MAT220 HANDBOOK}
+\begin{document}
+\AddToShipoutPictureBG{%
+  \AtPageUpperLeft{%
+    \hspace{\paperwidth}%
+    \raisebox{-\baselineskip}{%
+      \makebox[0pt][r]{Studentnummer: 226286    }
+}}}%
+
+\maketitle
+
+\section*{Grupper}
+For aa vaere gruppe maa et sett oppfylle 3 aksiomer:\\
+$G_1$: For alle $a,b,c \in G$ har vi at $(a*b)*c = a*(b*c)$ (Assositivitet)\\
+$G_2$: Det finnes et element e i G slik at for alle $x \in G$ saa $e*x = x*e = x$ (Identitetselementet)
+$G_3$: Til hver element $a \in G$ finnes det et elemen a' i G slik at $a*a' = a'*a = e$ (Inversen til a)
+
+Abelian: $ab = ba$\\
+Non-abelian: $ab \neq ba$.
+
+\section*{Order}
+\subsection*{Order i en gruppe}
+Order vil vaere antall elementer i en gruppe.\\
+Sagt paa en annen maate; det er antall ganger en maa gaa framover foer en naar identidets elementet. \\
+Dermed, naar en skal finne orderen til et element i en gryppe er det du spoer om hvor mange ganger du er noddt til aa utfore gruppeoperasjonen paa denne for aa komme til identietselementet.
+
+Kort om order, fint forklart fra stackexchange:\\
+The order of an elements g in a group G is the smallest number of times that you need to apply the group operation to g to obtain the identity.
+
+Let G be cyclic of order 35. That means that there is an element $g \in G$ with $g^{35}=e$, and that $gk\neq e$ for all $1<k<35$. Now, consider $h=g^5.$ Then $h^7=(g^5)^7=g^{35}=e$, but$ hk \neq e $for all $1<k<7$, thus h has order 7. Similarly, the element g7 has order 5.
+
+Remark: Cauchy's theorem (which perhaps you did not see yet) states that if p is a prime dividing |G|, then G has an element of order p. Thus, the only finite groups where all elements except the identity have the same order are p-groups, namely groups whose order is a power of a fixed prime p. A group of size 35 is not a p-group.
+
+\subsection*{Finn order til X i gruppe A}
+Formel: $\frac{Order of(A)}{gcd(x, Order of (A)}$
+
+\subsection*{Finn alle abelske grupper av orden X}
+Primtallfaktoriser X. Lagranges theorem brukes. Dette sier at orderen til alle subgrupper til G vil kunne dividere orderen til G. \\
+Dermed vil alle grupper satt sammen av primtallene til X lage grupper av orden X.\\
+Eksempel: Gi alle abelske grupper av orden 8:\\
+Primtallfaktoriserer forst $8 = 2 \times 2 \times 2$\\
+Alle abelske grupper med order 8 vil da vaere:\\
+1. $Z_2 \times Z_2 \times Z_2$\\
+2. $Z_4 \times Z_2$\\
+3. $Z_8$
+
+\subsection*{Hva er ordenen til (x,y) i $Z_a \times Z_b$}
+Finn ordenen til x i $Z_a$. Dvs, $\frac{a}{gcd(x,a)}. $
+Finn saa ordenen til y i $Z_b$. Dvs, $\frac{b}{gcd(y,b)}$
+Finn til slutt lcm av svarene.\\
+Eksempel: $(10,21) i Z_{12} \times Z_{30}$
+Orderen til 10 i $Z_12$ vil vaere:\\
+$\frac{12}{gcd(10,12)} = \frac{12}{2} = 6$\\
+Videre er orderen til 21 i $Z_{30}$ lik:\\
+$\frac{30}{gcd(21,30)} = \frac{30}{3} = 10$\\
+Orderen til $(10,21)$ i $Z_{12} \times Z_{30}$ er dermed $lcm(10,6) = 30$\\
+
+\section*{Ringer/Rings}
+En ring <R, +, *> er bare et set R som har to operasjone istedenfor bare en (Slik grupper har). Kaller dem i framtidige eksempler for addering og multiplikasjon. For aa vaere en ring maa disse tre aksiomene oppfylles:\\
+$R_1$: <R, +> er en abelian gruppe (Det vil si at den maa oppfylle alle gruppe aksiomene under addisjon).\\
+$R_2$: Multiplikasjon er assosiativt.\\
+$R_3$: For alle $a,b,c \in R$ saa holder $a*(b+c) = (a*b) + (a*c)$ og $(a+b) * c = (a*c) + (b*c)$.
+
+Legg merke til at en ring IKKE nodvendigvis trenger aa oppfylle folgende krav\\
+1) Multiplisering kommutativ, dvs: $a*b = b*a$.\\
+2) Multipliserings identitet\\
+3) Multipliserings inverser.\\
+
+\subsection*{Subring}
+For aa bevise at S er en subring av R maa en bevise folgende:\\
+0) Vise at S faktisk er et subset av R (Er ofte obvious).\\
+1) S er lukket under addisjon.\\
+2) S er lukket under multiplikasjon.\\
+3) S inneholder det adderende identitetselementet (0).\\
+4) Alle elementer i S har en invers i S.
+
+Protip: For aa bevise at noe er en ring kan en ofte kun bevise det som trengs for aa bevise at det er en subring, og dersom det da er et subset av noe en vet er en ring er det nok aa bevise.
+
+\subsection*{Zero divisors og Integral domain}
+Zero divisor er tall ulik 0 som, naar de multipliseres, er lik 0. Eks:\\
+Hvis vi ser paa $Z_{10}$ saa vil $5 \times 4$ vaere lik 20mod(10) $= 0$. Da, til tross for at hverken 5 eller 4 er 0 er resultatet 0. 5 og 4 er da, sammen, zero divisors i $Z_{10}$. \\
+
+Videre finnes det ringer der dette aldri skjer. (F.eks. R, Q og Z). Her kan aldri to elementer multiplisert sammen bli 0. Disse ringene kalles INTEGRAL DOMAIN. Dette er den offisielle definisjonen:\\
+En kommutativ ring med enhetselement og ingen zero divisors.
+
+Subnote: Legg ogsaa merke til at alle $Z_c$ der c ikke er et primtall har zero divisors, mens $Z_p$ der p er et primtall er et integral domain. 
+
+\subsection*{Field}
+Et field er bare et integral domain hvor hvert non-zero element er en unit. En unit er hvilket som helst element som har en invers (multipliserende invers that is). \\
+Eksempler paa field er R og Q. Da disse oppfyller alle integral domain kravene, men ogsaa oppfyller kravet om at alle elementer har en invers (sett bort ifra 0). Z er ikke et field, da denne ikke inneholder noen multiplikativ invers for sine elementer. 
+
+Protip(theorem): Et endelig integral domain er alltid ett field. 
+
+\section*{Polynomer og saant}
+
+\subsection*{Vis at polynom p(x) er irreducible i $Z_y$}
+Dersom $p(a) \neq 0$ for alle $a \in Z$ er p irredusibelt. 
+
+\section*{Burnsides formel}
+Basically, det den gjor, er aa finne antall orbits i en gruppe.
+Dersom G er en gruppe som inneholder ulike rotasjoner som: fiksert, roter 90 grader, roter 180, roter 170 grader, speil horisontal, vertikalt, begge diagonale. For hver av disse rotasjonene maa en finne hvor mange elementer totalt som forblir fiksert naar en gjor disse operasjonene. En tar saa summen av dette og deler paa alle de ulike rotasjonene. Veldig godt forklart i denne korte videoen:\\
+https://youtu.be/wdDF7_vfLcE
+
+
+\end{document}
