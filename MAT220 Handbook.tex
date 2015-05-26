@@ -29,6 +29,12 @@ $G_3$: Til hver element $a \in G$ finnes det et elemen a' i G slik at $a*a' = a'
 Abelian: $ab = ba$\\
 Non-abelian: $ab \neq ba$.
 
+\subsection*{Normal Subgroup}
+Skriv om dette!!
+
+\subsection*{Factor groups}
+Skriv om dette!
+
 \section*{Order}
 \subsection*{Order i en gruppe}
 Order vil vaere antall elementer i en gruppe.\\
@@ -67,7 +73,7 @@ $\frac{30}{gcd(21,30)} = \frac{30}{3} = 10$\\
 Orderen til $(10,21)$ i $Z_{12} \times Z_{30}$ er dermed $lcm(10,6) = 30$\\
 
 \section*{Ringer/Rings}
-En ring <R, +, *> er bare et set R som har to operasjone istedenfor bare en (Slik grupper har). Kaller dem i framtidige eksempler for addering og multiplikasjon. For aa vaere en ring maa disse tre aksiomene oppfylles:\\
+En ring $< R, +, * >$ er bare et set R som har to operasjone istedenfor bare en (Slik grupper har). Kaller dem i framtidige eksempler for addering og multiplikasjon. For aa vaere en ring maa disse tre aksiomene oppfylles:\\
 $R_1$: <R, +> er en abelian gruppe (Det vil si at den maa oppfylle alle gruppe aksiomene under addisjon).\\
 $R_2$: Multiplikasjon er assosiativt.\\
 $R_3$: For alle $a,b,c \in R$ saa holder $a*(b+c) = (a*b) + (a*c)$ og $(a+b) * c = (a*c) + (b*c)$.
@@ -96,21 +102,47 @@ En kommutativ ring med enhetselement og ingen zero divisors.
 
 Subnote: Legg ogsaa merke til at alle $Z_c$ der c ikke er et primtall har zero divisors, mens $Z_p$ der p er et primtall er et integral domain. 
 
-\subsection*{Field}
+\section*{Field}
 Et field er bare et integral domain hvor hvert non-zero element er en unit. En unit er hvilket som helst element som har en invers (multipliserende invers that is). \\
 Eksempler paa field er R og Q. Da disse oppfyller alle integral domain kravene, men ogsaa oppfyller kravet om at alle elementer har en invers (sett bort ifra 0). Z er ikke et field, da denne ikke inneholder noen multiplikativ invers for sine elementer. 
 
 Protip(theorem): Et endelig integral domain er alltid ett field. 
 
+\subsection*{Adjoint Field}
+Et adjoint field er naar en allerede har et ferdig field, si Q, og oensker aa legge til et nytt element, si $\sqrt{2}$, men onsker at det forsatt skal forbli et field. Da maa man ogsaa legge til flere elementer slik at aksiomene for field ikke brytes.\\
+I dette eksempelet maa en f.eks. sorge for at alle tall som allerede er i Q skal kunne adderes me $\sqrt{2}$ og fortsatt eksistere i settet.\\
+I tillegg vil vi ogsaa at alle tall i Q skall kunnes multipliseres me $\sqrt{2}$ og likevel eksistere i settet. Disse to egenskapene kan vi kombinere og vi faar da settet:\\
+$Q(\sqrt{2}) = \{a + b\sqrt{2} | a,b \in Q\}$.\\
+Legg merke til at dette ikke er en generell losning. Hvis vi ser på $Q(\sqrt[3]{5})$ ser vi at $\sqrt[3]{5} * \sqrt[3]{5} = \sqrt[3]{5} ^ 2 $ som vi ikke kan uttrykke med elementer fra Q.(gitt at vi bare kan multiplisere og addere). Dermed maa denne ogsaa legges til:\\
+$Q(\sqrt[3]{5}) = \{a+b\sqrt[3]{5} + c \sqrt[3]{5}^2\}$  \\
+Generelt: Legg til nye ledd (Multipliser med en konstant), der hvert ledd er tallet som skal legges til i fielden opphøyd i en storre enn den forrige, helt til dette tallet blir noe som allerede finnes i fielden. 
+
 \section*{Polynomer og saant}
+
+\subsection*{Vis at polynomet p er irreducible over Q}
+Gauss' Lemma forteller oss for å vise at et polynom er irreducible over Q er det nok å vise at det er irreducible over Z. => Vis at p er irreducible over Z, da vil det vaere nok bevis for Q.
+\\\\
+Eisenstein's criterion: Polynomet er irreducibel dersom disse tre kravene er oppfyllt (dette vil som regel vaere den som brukes oftest)\\
+Dersom vi kan finne et primtall integer q slik at:
+1. q er en faktor for hver ikke ledende koeffisient (dvs. alle konstanter som ikke er foran den x'en med høyest opphøyning. I $5x^4 +2x -3$ er f.eks. 5 den ledende koeffesienten)\\
+2. q er IKKE en faktor i den ledende koeffisienten\\
+3. $q^2$ er ikke en faktor i konstanten. \\\\
+
+Reduksjon mod(n): Dersom en modulerer polynomet over en viss n og viser at de da er irredusibelt over $Z_n$ vil det bety at det ogsaa er irreducibelt over Z.\\
+Eks: $t^4 - 15t + 7\ mod(5) = t^4 + 2$. Dette skal da kunne reduseres til to faktorer der den ene er polynom grad 1 og det andre med grad 3.(Setter t utenfor) Dvs: $(t-x)(t^3 ....)$\\
+Trenger da bare å sjekke for alle tall a i $Z_5$. $x\in Z_5$ er en rot. Dersom ingen av disse blir 0 finnes det ikke en rasjonell rot (det betyr et rasjonalt tall for x slik at polynomet = 0). Ser raskt at det ikke finnes en rot i $Z_5$ for $t^4 + 2$. Men dette beviser kun at det ikke kan faktorieser på denne måten.(Det hadde vaert nok dersom polynomet var av grad 3) Det kan fortsatt faktoriseres med to polynomer med grad 2: \\
+$(t^2....)(t^2...)$. Denne er litt mer tricky. For aa finne ut dette bruk metoden som blir beskrevet i denne videoen omtrent fra minutt 12\\
+https://youtu.be/ebwp4eqrOfg?t=12m32s
 
 \subsection*{Vis at polynom p(x) er irreducible i $Z_y$}
 Dersom $p(a) \neq 0$ for alle $a \in Z$ er p irredusibelt. 
 
+
+
 \section*{Burnsides formel}
 Basically, det den gjor, er aa finne antall orbits i en gruppe.
 Dersom G er en gruppe som inneholder ulike rotasjoner som: fiksert, roter 90 grader, roter 180, roter 170 grader, speil horisontal, vertikalt, begge diagonale. For hver av disse rotasjonene maa en finne hvor mange elementer totalt som forblir fiksert naar en gjor disse operasjonene. En tar saa summen av dette og deler paa alle de ulike rotasjonene. Veldig godt forklart i denne korte videoen:\\
-https://youtu.be/wdDF7_vfLcE
+https://youtu.be/wdDF7\_vfLcE
 
 
 \end{document}
