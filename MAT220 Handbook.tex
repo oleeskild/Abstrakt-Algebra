@@ -72,6 +72,36 @@ Videre er orderen til 21 i $Z_{30}$ lik:\\
 $\frac{30}{gcd(21,30)} = \frac{30}{3} = 10$\\
 Orderen til $(10,21)$ i $Z_{12} \times Z_{30}$ er dermed $lcm(10,6) = 30$\\
 
+\section*{Sylow Theoremer}
+\subsection*{Theorem 1}
+La G vaere en endelig gruppe. Dersom p er et primtall slik at $p^k$ er en divisor for $|G|$ for en $k\geq0$, vil G ha en subgruppe som har order $k^p$. \\
+Eks: $S_5$ har order $5! = 5*4*3*2*1 = 5*2*2*3*2 = 5*3*2^3$. Det betyr at den inneholder 3 subgrupper med order 5,3 og $2^3 = 8$.
+
+\subsection*{Definisjon 1}
+La G vaere en endelig gruppe og la p vaere et primtall. En subgruppe P av G kalles \"a Sylow p-subgroup\" av G  dersom $|P| = p^k$ for en integer $k\geq 1$ slik at $p^k$ er en divisor for $|G|$ men $p^{k+1}$ er ikke.\\
+Eks: Vi tar igjen for oss $|S_5| = 5*3*2^3$. Denne har da en Sylow 2-subgruppe ettersom 2 er det eneste primtallet som opphoyes i noe hoyere enn 1. 
+
+\subsection*{Theorem 2}
+La G vaere en endelig gruppe med order n og la p vaere et primtall.\\
+Alle Sylow p-subgrupper av G er konjugate (http://en.wikipedia.org/wiki/Conjugacy\_class) og enhver p-subgruppe av G finnes i en Sylow p-subgruppe. 
+
+\subsection*{Theorem 3}
+La $n = mp^k$ der $gcd(m,p) = 1$ (dvs. at m og p er relativt primske) og la s vaere antall Sylow p-subgrupper av G. Da vil $s | m $ og $s \equiv 1(mod\  p )$
+
+\subsection*{Folger av dette}
+La $p>2$ vaere et primtall, og la G vaere en gruppe med order 2p. Da er G enten syklisk eller isomorfisk til dihedral gruppen $D_p$ av order 2p.\\\\
+
+La G vaere en gruppe av order pq hvor $p>q$ er primtall: \\
+Dersom q ikke er en divisor av $p-1$ så er G syklisk. \\
+Dersom q er en divisor av $p-1$ saa er enten G syklisk ellers er G generert av to elementer a og b som tilfredstiller disse kravene:\\
+$a^p = e$, $b^q = e$, $ba = a^n b$ der $n \neq 1(mod\ p)$ men $n^q \equiv 1 (mod\ p)$.
+
+\subsection*{Fin oppgave for aa se dette i praksis er oppgave 4 i dette settet}
+http://bit.ly/1ciHUTD\\
+Fasit:
+http://bit.ly/1LJ2IjW
+
+
 \section*{Ringer/Rings}
 En ring $< R, +, * >$ er bare et set R som har to operasjone istedenfor bare en (Slik grupper har). Kaller dem i framtidige eksempler for addering og multiplikasjon. For aa vaere en ring maa disse tre aksiomene oppfylles:\\
 $R_1$: <R, +> er en abelian gruppe (Det vil si at den maa oppfylle alle gruppe aksiomene under addisjon).\\
