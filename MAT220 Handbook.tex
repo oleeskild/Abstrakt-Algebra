@@ -95,7 +95,10 @@ La G vaere en endelig gruppe med order n og la p vaere et primtall.\\
 Alle Sylow p-subgrupper av G er konjugate (http://en.wikipedia.org/wiki/Conjugacy\_class) og enhver p-subgruppe av G finnes i en Sylow p-subgruppe. 
 
 \subsection*{Theorem 3}
-La $n = mp^k$ der $gcd(m,p) = 1$ (dvs. at m og p er relativt primske) og la s vaere antall Sylow p-subgrupper av G. Da vil $s | m $ og $s \equiv 1(mod\  p )$
+La $n = mp^k$ der $gcd(m,p) = 1$ (dvs. at m og p er relativt primske) og la s vaere antall Sylow p-subgrupper av G. Da vil $s | m $ og $s \equiv 1(mod\  p )$\\
+(n maa kunne dele orderen til den originale gruppe, dvs. bestaa av de andre primtallene i G. Dette betyr igjen at m er satt sammen av andre primtall i G.)\\\\
+
+Det holder aa sjekke om primtallene ulike fra p (altsaa de som er relativt primske til p) kan settes sammen til noe som blir 1mod(p). Da vil denne sammensetningen vaere antall p-grupper. 
 
 \subsection*{Folger av dette}
 La $p>2$ vaere et primtall, og la G vaere en gruppe med order 2p. Da er G enten syklisk eller isomorfisk til dihedral gruppen $D_p$ av order 2p.\\\\
@@ -141,11 +144,12 @@ En kommutativ ring med enhetselement og ingen zero divisors.
 
 Subnote: Legg ogsaa merke til at alle $Z_c$ der c ikke er et primtall har zero divisors, mens $Z_p$ der p er et primtall er et integral domain. 
 
-\section*{Field}
+\section*{Field (Kropp)}
 Et field er bare et integral domain hvor hvert non-zero element er en unit. En unit er hvilket som helst element som har en invers (multipliserende invers that is). \\
-Eksempler paa field er R og Q. Da disse oppfyller alle integral domain kravene, men ogsaa oppfyller kravet om at alle elementer har en invers (sett bort ifra 0). Z er ikke et field, da denne ikke inneholder noen multiplikativ invers for sine elementer. 
+Eksempler paa field er R og Q. Da disse oppfyller alle integral domain kravene, men ogsaa oppfyller kravet om at alle elementer har en invers (sett bort ifra 0). Z er ikke et field, da denne ikke inneholder noen multiplikativ invers for sine elementer. \\
 
-Protip(theorem): Et endelig integral domain er alltid ett field. 
+Protip(theorem): Et endelig integral domain er alltid ett field. \\
+Protip 2: La R vaere en ring og I vaere et maksimalt ideal for denne ringen. R/I er da en kropp/field. 
 
 \subsection*{Adjoint Field}
 Et adjoint field er naar en allerede har et ferdig field, si Q, og oensker aa legge til et nytt element, si $\sqrt{2}$, men onsker at det forsatt skal forbli et field. Da maa man ogsaa legge til flere elementer slik at aksiomene for field ikke brytes.\\
